@@ -24,16 +24,8 @@ const handleReducer = (state=cart, action) => {
             break;
 
             case "DELITEM":
-                // const exist1 = state.find((x)=>x.id === profuct.id);
-                console.log(profuct)
-                if(profuct) {
-                    return state.filter((x)=>x.id !== action.payload.id);
-                }else {
-                    return state.map((x)=>
-                    x.id=== profuct.id ? {...x, qty: x.qty -1}:x);
-                }
 
-                console.log(profuct)
+                return state.filter((data) => data.id !== action.payload);
                 break;
     
         default:

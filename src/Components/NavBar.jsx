@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 function NavBar() {
   const selector =useSelector((state)=>state.handleReducer)
   return (
@@ -22,8 +22,8 @@ function NavBar() {
             <i className="fa fa-sign-in me-1"></i>Login</a>
             <a href="" className="btn btn-outline-dark ms-2">
             <i className="fa fa-user-plus me-1"></i>Register</a>
-            <a href="" className="btn btn-outline-dark ms-2">
-            <i className="fa fa-shopping-cart me-1"></i>Cart ({selector.length})</a>
+            <Link to={`/cart/:id`} className="btn btn-outline-dark ms-2">
+            <i className="fa fa-shopping-cart me-1"></i>Cart ({selector.length})</Link>
             
           </div>
         </Navbar.Collapse>
